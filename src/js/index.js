@@ -10,13 +10,25 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let name = "Name";
+  if (variables.name !== null) name = variables.name;
+
+  let lastname = "Lastame";
+  if (variables.lastname !== null) lastname = variables.lastname;
+
+  let role = " ";
+  if (variables.role !== null) role = variables.role;
+
+  let city = " ";
+  if (variables.city !== null) city = variables.city;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>${name} ${lastname} </h1>
+          <h2>${role} </h2>
+          <h3>${city} </h3>
           <ul class="position-right">
             <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
